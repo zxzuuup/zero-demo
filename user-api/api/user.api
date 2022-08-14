@@ -1,0 +1,71 @@
+// api语法版本
+syntax = "v1"
+
+info(
+	author: "songmeizi"
+	date:   "2020-01-08"
+	desc:   "api语法示例及语法说明"
+)
+
+type (
+	UserInfoReq {
+		UserId int64 `json:"userid"`
+	}
+	UserInfoResp {
+		UserId   int64  `json:"userid"`
+		NickName string `json:"nickname"`
+		Mobile   string `json:"mobile"`
+	}
+)
+type (
+	UserUpdateResp {
+		UserId   int64  `json:"userid"`
+		NickName string `json:"nickname"`
+	}
+	UserUpdateReq {
+		Flag bool `json:"flag"`
+	}
+)
+type (
+	UserCreateReq {
+		Mobile   string `json:"mobile"`
+		NickName string `json:"nickname"`
+	}
+	UserCreateResp {
+		Flag bool `json:"flag"`
+	}
+)
+type (
+	UserTestReq {
+	}
+	UserTestResp {
+	}
+)
+@server(
+	group:user
+	prefix:userapi/v1
+	middleware:	TestMiddleware
+)
+service user-api{
+	@doc "新增用户"
+	@handler userCreate
+	post /user/create (UserCreateReq) returns (UserCreateResp)
+	
+	@doc "获取用户信息"
+	@handler userInfo
+	post /user/info (UserInfoReq) returns (UserInfoResp)
+	
+	@doc "修改用户信息"
+	@handler userUpdate
+	post /user/update (UserUpdateReq) returns (UserUpdateResp)
+}
+
+@server(
+	group:user
+	prefix:userapi/v1
+)
+service user-api{
+	@doc "test"
+	@handler userTest
+	post /user/test (UserTestReq) returns (UserTestResp)
+}

@@ -18,86 +18,86 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// UsercenterClient is the client API for Usercenter service.
+// UserCenterClient is the client API for UserCenter service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type UsercenterClient interface {
+type UserCenterClient interface {
 	GetUserInfo(ctx context.Context, in *GetUserInfoReq, opts ...grpc.CallOption) (*GetUserInfoResp, error)
 }
 
-type usercenterClient struct {
+type userCenterClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewUsercenterClient(cc grpc.ClientConnInterface) UsercenterClient {
-	return &usercenterClient{cc}
+func NewUserCenterClient(cc grpc.ClientConnInterface) UserCenterClient {
+	return &userCenterClient{cc}
 }
 
-func (c *usercenterClient) GetUserInfo(ctx context.Context, in *GetUserInfoReq, opts ...grpc.CallOption) (*GetUserInfoResp, error) {
+func (c *userCenterClient) GetUserInfo(ctx context.Context, in *GetUserInfoReq, opts ...grpc.CallOption) (*GetUserInfoResp, error) {
 	out := new(GetUserInfoResp)
-	err := c.cc.Invoke(ctx, "/pb.usercenter/getUserInfo", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.UserCenter/GetUserInfo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// UsercenterServer is the server API for Usercenter service.
-// All implementations must embed UnimplementedUsercenterServer
+// UserCenterServer is the server API for UserCenter service.
+// All implementations must embed UnimplementedUserCenterServer
 // for forward compatibility
-type UsercenterServer interface {
+type UserCenterServer interface {
 	GetUserInfo(context.Context, *GetUserInfoReq) (*GetUserInfoResp, error)
-	mustEmbedUnimplementedUsercenterServer()
+	mustEmbedUnimplementedUserCenterServer()
 }
 
-// UnimplementedUsercenterServer must be embedded to have forward compatible implementations.
-type UnimplementedUsercenterServer struct {
+// UnimplementedUserCenterServer must be embedded to have forward compatible implementations.
+type UnimplementedUserCenterServer struct {
 }
 
-func (UnimplementedUsercenterServer) GetUserInfo(context.Context, *GetUserInfoReq) (*GetUserInfoResp, error) {
+func (UnimplementedUserCenterServer) GetUserInfo(context.Context, *GetUserInfoReq) (*GetUserInfoResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserInfo not implemented")
 }
-func (UnimplementedUsercenterServer) mustEmbedUnimplementedUsercenterServer() {}
+func (UnimplementedUserCenterServer) mustEmbedUnimplementedUserCenterServer() {}
 
-// UnsafeUsercenterServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to UsercenterServer will
+// UnsafeUserCenterServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to UserCenterServer will
 // result in compilation errors.
-type UnsafeUsercenterServer interface {
-	mustEmbedUnimplementedUsercenterServer()
+type UnsafeUserCenterServer interface {
+	mustEmbedUnimplementedUserCenterServer()
 }
 
-func RegisterUsercenterServer(s grpc.ServiceRegistrar, srv UsercenterServer) {
-	s.RegisterService(&Usercenter_ServiceDesc, srv)
+func RegisterUserCenterServer(s grpc.ServiceRegistrar, srv UserCenterServer) {
+	s.RegisterService(&UserCenter_ServiceDesc, srv)
 }
 
-func _Usercenter_GetUserInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserCenter_GetUserInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetUserInfoReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UsercenterServer).GetUserInfo(ctx, in)
+		return srv.(UserCenterServer).GetUserInfo(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.usercenter/getUserInfo",
+		FullMethod: "/pb.UserCenter/GetUserInfo",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UsercenterServer).GetUserInfo(ctx, req.(*GetUserInfoReq))
+		return srv.(UserCenterServer).GetUserInfo(ctx, req.(*GetUserInfoReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Usercenter_ServiceDesc is the grpc.ServiceDesc for Usercenter service.
+// UserCenter_ServiceDesc is the grpc.ServiceDesc for UserCenter service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Usercenter_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "pb.usercenter",
-	HandlerType: (*UsercenterServer)(nil),
+var UserCenter_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "pb.UserCenter",
+	HandlerType: (*UserCenterServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "getUserInfo",
-			Handler:    _Usercenter_GetUserInfo_Handler,
+			MethodName: "GetUserInfo",
+			Handler:    _UserCenter_GetUserInfo_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

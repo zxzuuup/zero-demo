@@ -11,18 +11,18 @@ import (
 	"zero-demo/user-rpc/pb"
 )
 
-type UsercenterServer struct {
+type UserCenterServer struct {
 	svcCtx *svc.ServiceContext
-	pb.UnimplementedUsercenterServer
+	pb.UnimplementedUserCenterServer
 }
 
-func NewUsercenterServer(svcCtx *svc.ServiceContext) *UsercenterServer {
-	return &UsercenterServer{
+func NewUserCenterServer(svcCtx *svc.ServiceContext) *UserCenterServer {
+	return &UserCenterServer{
 		svcCtx: svcCtx,
 	}
 }
 
-func (s *UsercenterServer) GetUserInfo(ctx context.Context, in *pb.GetUserInfoReq) (*pb.GetUserInfoResp, error) {
+func (s *UserCenterServer) GetUserInfo(ctx context.Context, in *pb.GetUserInfoReq) (*pb.GetUserInfoResp, error) {
 	l := logic.NewGetUserInfoLogic(ctx, s.svcCtx)
 	return l.GetUserInfo(in)
 }

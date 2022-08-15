@@ -1,18 +1,19 @@
 syntax = "proto3";
 
-package pb;
-
 option go_package = "./pb";
 
+package pb;
+
 message GetUserInfoReq{
-  int64 id = 1;
+    int64 id = 1;
 }
 
 message GetUserInfoResp{
-  int64 id = 1;
-  string nickname = 2;
+    int64 id = 1;
+    string nickname = 2;
 }
 
-service usercenter {
-  rpc getUserInfo(GetUserInfoReq) returns(GetUserInfoResp);
+//service
+service UserCenter {
+    rpc GetUserInfo(GetUserInfoReq) returns(GetUserInfoResp);
 }

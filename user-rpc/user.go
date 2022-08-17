@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"flag"
 	"fmt"
 	"github.com/zeromicro/go-zero/core/service"
@@ -33,6 +34,17 @@ func main() {
 		}
 	})
 	defer s.Stop()
+	s.AddUnaryInterceptors(TestServerInterceptor)
 	fmt.Printf("Starting rpc server at %s...\n", c.ListenOn)
 	s.Start()
+}
+
+func TestServerInterceptor(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (resp interface{}, err error) {
+	fmt.Printf("--------------------------\n")
+	fmt.Printf("req===>%+v \n", req)
+	fmt.Printf("ctx===>%+v \n", ctx)
+	resp, err = handler(ctx, req)
+	fmt.Printf("--------------------------\n")
+	fmt.Printf("info===>%+v \n", info)
+	return
 }

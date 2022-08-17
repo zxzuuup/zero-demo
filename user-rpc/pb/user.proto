@@ -4,13 +4,23 @@ option go_package = "./pb";
 
 package pb;
 
+import "userModel.proto";
+
+message Order{
+    int64 Id=1;
+    int64 GoodsId=2;
+}
+
+message GetOrderListResp{
+    repeated Order List=1;
+}
+
 message GetUserInfoReq{
     int64 id = 1;
 }
 
 message GetUserInfoResp{
-    int64 id = 1;
-    string nickname = 2;
+    pb.UserModel userModel=1;
 }
 
 //service

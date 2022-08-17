@@ -13,8 +13,10 @@ import (
 )
 
 type (
-	GetUserInfoReq  = pb.GetUserInfoReq
-	GetUserInfoResp = pb.GetUserInfoResp
+	GetOrderListResp = pb.GetOrderListResp
+	GetUserInfoReq   = pb.GetUserInfoReq
+	GetUserInfoResp  = pb.GetUserInfoResp
+	Order            = pb.Order
 
 	UserCenter interface {
 		GetUserInfo(ctx context.Context, in *GetUserInfoReq, opts ...grpc.CallOption) (*GetUserInfoResp, error)

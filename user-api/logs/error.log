@@ -80,3 +80,146 @@ github.com/zeromicro/go-zero/rest/handler.(*timeoutHandler).ServeHTTP.func1
 	/home/go/pkg/mod/github.com/zeromicro/go-zero@v1.4.0/rest/handler/timeouthandler.go:79
 runtime.goexit
 	/usr/local/go/src/runtime/asm_amd64.s:1594	caller=user/userInfoLogic.go:29
+2022-08-17T22:05:35.407+08:00	[31;1m error [0m	[HTTP] [103;90;1m 500 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:48134 - apifox/1.0.0 (https://www.apifox.cn)
+POST /userapi/v1/user/info HTTP/1.1
+Host: 127.0.0.1:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 18
+Content-Type: application/json
+User-Agent: apifox/1.0.0 (https://www.apifox.cn)
+
+{
+    "userid":1
+}	duration=15.6ms	trace=d8b36ff4dbb6003cabcf223fe0e40866	span=1e9d3063b2bca208	caller=handler/loghandler.go:199
+2022-08-17T22:07:53.349+08:00	[31;1m error [0m	[HTTP] [103;90;1m 500 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:43236 - apifox/1.0.0 (https://www.apifox.cn)
+POST /userapi/v1/user/info HTTP/1.1
+Host: 127.0.0.1:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 18
+Content-Type: application/json
+User-Agent: apifox/1.0.0 (https://www.apifox.cn)
+
+{
+    "userid":1
+}	duration=1.8ms	trace=e388749224132cf42974c0bc9ef04878	span=4f53b2fe4807b3b2	caller=handler/loghandler.go:199
+2022-08-17T22:10:10.090+08:00	[31;1m error [0m	[HTTP] [103;90;1m 500 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:54926 - apifox/1.0.0 (https://www.apifox.cn)
+POST /userapi/v1/user/info HTTP/1.1
+Host: 127.0.0.1:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 18
+Content-Type: application/json
+User-Agent: apifox/1.0.0 (https://www.apifox.cn)
+
+{
+    "userid":1
+}	duration=2.3ms	trace=297301649abff6f4247ff4c99fdde1e3	span=4036c9b584c8f7b3	caller=handler/loghandler.go:199
+2022-08-17T22:10:16.452+08:00	[31;1m error [0m	[HTTP] [103;90;1m 500 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:54932 - apifox/1.0.0 (https://www.apifox.cn)
+POST /userapi/v1/user/info HTTP/1.1
+Host: 127.0.0.1:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 18
+Content-Type: application/json
+User-Agent: apifox/1.0.0 (https://www.apifox.cn)
+
+{
+    "userid":1
+}	duration=1.8ms	trace=4e6ba660ade562dcc3849ac5e2267dcf	span=7f21989a70de2c37	caller=handler/loghandler.go:199
+/proc/11646/cgroup5.855+08:00	[31;1m error [0m	[HTTP] [103;90;1m 500 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:51722 - apifox/1.0.0 (https://www.apifox.cn)
+POST /userapi/v1/user/info HTTP/1.1
+Host: 127.0.0.1:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 18
+Content-Type: application/json
+User-Agent: apifox/1.0.0 (https://www.apifox.cn)
+
+{
+    "userid":1
+}	duration=3.2ms	trace=5d68a7dded9b81188574c53c6d6d903c	span=2cae185bb692f561	caller=handler/loghandler.go:199
+2022-08-17T22:11:30.259+08:00	[31;1m error [0m	[HTTP] [103;90;1m 500 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:56772 - apifox/1.0.0 (https://www.apifox.cn)
+POST /userapi/v1/user/info HTTP/1.1
+Host: 127.0.0.1:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 18
+Content-Type: application/json
+User-Agent: apifox/1.0.0 (https://www.apifox.cn)
+
+{
+    "userid":2
+}	duration=1.7ms	trace=a71a83c922687523119be28c9a610b9d	span=fcc7ed135bab5cdf	caller=handler/loghandler.go:199
+2022-08-17T22:11:47.593+08:00	[31;1m error [0m	[HTTP] [103;90;1m 500 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:51746 - apifox/1.0.0 (https://www.apifox.cn)
+POST /userapi/v1/user/info HTTP/1.1
+Host: 127.0.0.1:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 18
+Content-Type: application/json
+User-Agent: apifox/1.0.0 (https://www.apifox.cn)
+
+{
+    "userid":3
+}	duration=1.4ms	trace=612c5313c0cfb6b2bd3e6f61bf92d7c3	span=fae8016c73012aa9	caller=handler/loghandler.go:199
+2022-08-17T22:11:51.947+08:00	[31;1m error [0m	[HTTP] [103;90;1m 500 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:46292 - apifox/1.0.0 (https://www.apifox.cn)
+POST /userapi/v1/user/info HTTP/1.1
+Host: 127.0.0.1:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 18
+Content-Type: application/json
+User-Agent: apifox/1.0.0 (https://www.apifox.cn)
+
+{
+    "userid":1
+}	duration=1.2ms	trace=ea0c9553903c74c50144600e780e8b5f	span=031980714e41510c	caller=handler/loghandler.go:199
+2022-08-17T22:14:34.405+08:00	[31;1m error [0m	[HTTP] [103;90;1m 500 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:37470 - apifox/1.0.0 (https://www.apifox.cn)
+POST /userapi/v1/user/info HTTP/1.1
+Host: 127.0.0.1:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 18
+Content-Type: application/json
+User-Agent: apifox/1.0.0 (https://www.apifox.cn)
+
+{
+    "userid":1
+}	duration=1.8ms	trace=066e47707466cf55acff6ba2c9a240dc	span=413f96b94b2b1524	caller=handler/loghandler.go:199
+2022-08-17T23:22:43.779+08:00	[31;1m error [0m	[HTTP] [103;90;1m 500 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:33468 - apifox/1.0.0 (https://www.apifox.cn)
+POST /userapi/v1/user/info HTTP/1.1
+Host: 127.0.0.1:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 18
+Content-Type: application/json
+User-Agent: apifox/1.0.0 (https://www.apifox.cn)
+
+{
+    "userid":1
+}	duration=0.4ms	trace=14de1a363d4e4d16e7e07ab5d3003778	span=22e2c6d0c96acf9a	caller=handler/loghandler.go:199
+2022-08-17T23:23:35.763+08:00	[31;1m error [0m	[HTTP] [103;90;1m 500 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:39336 - apifox/1.0.0 (https://www.apifox.cn)
+POST /userapi/v1/user/info HTTP/1.1
+Host: 127.0.0.1:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 18
+Content-Type: application/json
+User-Agent: apifox/1.0.0 (https://www.apifox.cn)
+
+{
+    "userid":1
+}	duration=0.6ms	trace=1c497c6526806f2f464f82ece48c564f	span=f0284c45c093d459	caller=handler/loghandler.go:199

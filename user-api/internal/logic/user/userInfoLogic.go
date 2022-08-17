@@ -3,9 +3,9 @@ package user
 import (
 	"context"
 	"github.com/pkg/errors"
-	"zero-demo/user-api/internal/model"
 	"zero-demo/user-api/internal/svc"
 	"zero-demo/user-api/internal/types"
+	"zero-demo/user-rpc/pb"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -25,30 +25,24 @@ func NewUserInfoLogic(ctx context.Context, svcCtx *svc.ServiceContext) *UserInfo
 }
 
 func (l *UserInfoLogic) UserInfo(req *types.UserInfoReq) (resp *types.UserInfoResp, err error) {
-	if err:=l.testOne();err!=nil{
-		logx.Errorf("err: %+v",err)
-	}
-	user, err := l.svcCtx.UserModel.FindOne(l.ctx, uint64(req.UserId))
-	if err != nil && err != model.ErrNotFound {
-		return nil, errors.New("查询数据失败")
-	}
-	if user == nil {
-		return nil, errors.New("用户不存在")
+	userResp, err := l.svcCtx.UserRpcClient.GetUserInfo(l.ctx, &pb.GetUserInfoReq{
+		Id: req.UserId,
+	})
+	if err != nil {
+		return nil, err
 	}
 	return &types.UserInfoResp{
-		UserId:   int64(user.Id),
-		NickName: user.Nickname,
-		Mobile: user.Mobile,
+		UserId:   userResp.UserModel.Id,
+		NickName: userResp.UserModel.Nickname,
 	}, nil
 }
 
-
-func (l *UserInfoLogic) testOne()error {
+func (l *UserInfoLogic) testOne() error {
 	return l.testTwo()
 }
-func (l *UserInfoLogic) testTwo()error {
+func (l *UserInfoLogic) testTwo() error {
 	return l.testThree()
 }
-func (l *UserInfoLogic) testThree()error {
-	return errors.Wrap(errors.New("这是故意的"),"哈哈哈")
+func (l *UserInfoLogic) testThree() error {
+	return errors.Wrap(errors.New("这是故意的"), "哈哈哈")
 }

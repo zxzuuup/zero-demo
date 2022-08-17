@@ -2,6 +2,9 @@ package logic
 
 import (
 	"context"
+	"errors"
+	"fmt"
+	"google.golang.org/grpc/metadata"
 
 	"zero-demo/user-rpc/internal/svc"
 	"zero-demo/user-rpc/pb"
@@ -24,17 +27,18 @@ func NewGetUserInfoLogic(ctx context.Context, svcCtx *svc.ServiceContext) *GetUs
 }
 
 func (l *GetUserInfoLogic) GetUserInfo(in *pb.GetUserInfoReq) (*pb.GetUserInfoResp, error) {
-	// todo: add your logic here and delete this line
-	m := map[int64]string{
-		1: "张三",
-		2: "张三",
+	if md, ok := metadata.FromIncomingContext(l.ctx); ok {
+		tmp := md.Get("username")
+		fmt.Printf("tmp:%+v \n", tmp)
 	}
-	nickname := "unknown"
-	if name, ok := m[in.Id]; ok {
-		nickname = name
+	user, err := l.svcCtx.UserDataModel.FindOne(l.ctx, uint64(in.Id))
+	if err != nil {
+		return nil, errors.New("fffffuck")
 	}
 	return &pb.GetUserInfoResp{
-		Id:       in.Id,
-		Nickname: nickname,
+		UserModel: &pb.UserModel{
+			Id:       int64(user.Id),
+			Nickname: "ooooooooo",
+		},
 	}, nil
 }

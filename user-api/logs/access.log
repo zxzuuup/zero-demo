@@ -8,3 +8,71 @@
 2022-08-15T00:12:30.841+08:00	[34;1m info [0m	[HTTP] [42;97;1m 200 [0m - [46;97;1m POST [0m //userapi/v1//user/info - 127.0.0.1:35090 - apifox/1.0.0 (https://www.apifox.cn)	duration=0.3ms	trace=b25e359643c7089c3e37dd2ade812612	span=32717113ca8fbc8f	caller=handler/loghandler.go:197
 2022-08-15T00:12:50.554+08:00	[34;1m info [0m	[HTTP] [42;97;1m 200 [0m - [46;97;1m POST [0m //userapi/v1//user/info - 127.0.0.1:53700 - apifox/1.0.0 (https://www.apifox.cn)	duration=0.7ms	trace=aa6f0d8e0b630af7a55d574012b12143	span=857450894b505287	caller=handler/loghandler.go:197
 2022-08-15T00:13:36.417+08:00	[34;1m info [0m	[HTTP] [42;97;1m 200 [0m - [46;97;1m POST [0m //userapi/v1//user/info - 127.0.0.1:39282 - apifox/1.0.0 (https://www.apifox.cn)	duration=1.8ms	trace=0ec00c491498c32dad34b5584232bd7b	span=0acb77f18f18e442	caller=handler/loghandler.go:197
+2022-08-17T20:56:07.019+08:00	[34;1m info [0m	[HTTP] [45;97;1m 400 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:36716 - apifox/1.0.0 (https://www.apifox.cn)	duration=0.1ms	trace=40aa9fdb6b51ecfbbd29fffb1de50838	span=a51171137a734e99	caller=handler/loghandler.go:197
+2022-08-17T20:56:27.054+08:00	[34;1m info [0m	[HTTP] [45;97;1m 400 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:59164 - apifox/1.0.0 (https://www.apifox.cn)	duration=0.1ms	trace=c44f54790f7780865d89e0a707424ef8	span=0c842dba6fd195d0	caller=handler/loghandler.go:197
+2022-08-17T20:57:19.061+08:00	[34;1m info [0m	[HTTP] [42;97;1m 200 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:58694 - apifox/1.0.0 (https://www.apifox.cn)	duration=0.7ms	trace=120c5554a576a7e8bff8164673c6e84f	span=4046654c6836d12d	caller=handler/loghandler.go:197
+global end
+tMiddleware end
+esc = sql: Scan error on column index 3, name "create_time": unsupported Scan, storing driver.Value type <nil> into type *time.Time
+n error on column index 3, name "create_time": unsupported Scan, storing driver.Value type <nil> into type *time.Time	duration=15.0ms	trace=d8b36ff4dbb6003cabcf223fe0e40866	span=a23b27b23a69ae21	caller=clientinterceptors/durationinterceptor.go:25
+[HTTP] 7.0.0.1:8888
+info HTTP/1.1
+;1m POST [0m /userapi/v1/user/info - 127.0.0.1:43236 - apifox/1.0.0 (https://www.apifox.cn)pe <nil> into type *time.Time
+n error on column index 3, name "create_time": unsupported Scan, storing driver.Value type <nil> into type *time.Time	duration=1.6ms	trace=e388749224132cf42974c0bc9ef04878	span=0705866e75f06694	caller=clientinterceptors/durationinterceptor.go:25
+2022-08-17T22:10:10.090+08:00	[34;1m info [0m	fail - etcd:/0.0.0.0:2379/user.rpc/pb.UserCenter/GetUserInfo - id:1 - rpc error: code = Unknown desc = sql: Scan error on column index 3, name "create_time": unsupported Scan, storing driver.Value type <nil> into type *time.Time	duration=1.7ms	trace=297301649abff6f4247ff4c99fdde1e3	span=376caff968a475f0	caller=clientinterceptors/durationinterceptor.go:25
+2022-08-17T22:10:16.452+08:00	[31;1m error [0m	[HTTP] [103;90;1m 500 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:54932 - apifox/1.0.0 (https://www.apifox.cn)
+POST /userapi/v1/user/info HTTP/1.1
+Host: 127.0.0.1:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 18
+Content-Type: application/json
+User-Agent: apifox/1.0.0 (https://www.apif2022-08-17T22:11:25.855+08:00	[34;1m info [0m	fail - etcd:/0.0.0.0:2379/user.rpc/pb.UserCenter/GetUserInfo - id:1 - rpc error: code = Unknown desc = sql: Scan error on column index 3, name "create_time": unsupported Scan, storing driver.Value type <nil> into type *time.Time	duration=2.5ms	trace=5d68a7dded9b81188574c53c6d6d903c	span=7a79225fbff0dc0c	caller=clientinterceptors/durationinterceptor.go:25
+[HTTP] [103;90;1m 500 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:56772 - apifox/1.0.0 (https://www.apifox.cn)
+POST /userapi/v1/user/info HTTP/1.1
+Host: 127.0.0.1:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 18
+Content-Type: applicatio2022-08-17T22:11:47.593+08:00	[31;1m error [0m	[HTTP] [103;90;1m 500 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:51746 - apifox/1.0.0 (https://www.apifox.cn)
+POST /userapi/v1/user/info HTTP/1.1
+Host: 127.0.0.1:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-al[HTTP] [103;90;1m 500 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:46292 - apifox/1.0.0 (https://www.apifox.cn)
+POST /userapi/v1/user/info HTTP/1.1
+Host: 127.0.0.1:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 18
+Content-Type: application/json
+User-Agent: apifox/1.0.0 (https://www.apifox.cn)
+
+{
+    "userid":1
+}ioninterceptor.go:25
+global end
+tMiddleware end
+esc = sql: Scan error on column index 3, name "create_time": unsupported Scan, storing driver.Value type <nil> into type *time.Time
+n error on column index 3, name "create_time": unsupported Scan, storing driver.Value type <nil> into type *time.Time	duration=1.5ms	trace=066e47707466cf55acff6ba2c9a240dc	span=4159e6a8bb46699a	caller=clientinterceptors/durationinterceptor.go:25
+2022-08-17T22:14:42.790+08:00	[34;1m info [0m	[HTTP] [42;97;1m 200 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:54580 - apifox/1.0.0 (https://www.apifox.cn)	duration=1.4ms	trace=f3bdd46ba36aa03994f0e82ec9cd08e9	span=925ec46fab7f9c6b	caller=handler/loghandler.go:197
+2022-08-17T22:53:08.628+08:00	[34;1m info [0m	[HTTP] [42;97;1m 200 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:36320 - apifox/1.0.0 (https://www.apifox.cn)	duration=3.3ms	trace=62504fef932b28c5fff2b4f823584c60	span=c18603d7e9de5069	caller=handler/loghandler.go:197
+2022-08-17T23:22:43.779+08:00	[31;1m error [0m	[HTTP] [103;90;1m 500 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:33468 - apifox/1.0.0 (https://www.apifox.cn)
+POST /userapi/v1/user/info HTTP/1.1
+Host: 127.0.0.1:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 18
+Content-Type: applicat[0m;1mhandler/loghandler.go:1998c564f1m POST [0m /userapi/v1/user/info - 127.0.0.1:39336 - apifox/1.0.0 (https://www.apifox.cn)
+POST /userapi/v1/user/info HTTP/1.1
+Host: 127.0.0.1:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 18
+Content-Type: application/json
+User-Agent: apifox/1.0.0 (https://www.a2022-08-17T23:24:07.112+08:00	[34;1m info [0m	[HTTP] [42;97;1m 200 [0m - [46;97;1m POST [0m /userapi/v1/user/info - 127.0.0.1:40708 - apifox/1.0.0 (https://www.apifox.cn)	duration=1.5ms	trace=540b32949426cfc55e69518862498c1f	span=b1987151cd1bb119	caller=handler/loghandler.go:197

@@ -3,7 +3,7 @@ syntax = "v1"
 
 info(
 	author: "songmeizi"
-	date:   "2020-01-08"
+	date:   "2022-08-16"
 	desc:   "api语法示例及语法说明"
 )
 
